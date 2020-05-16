@@ -17,13 +17,13 @@ package tvip_axi_types_pkg;
       ; //  TBD
     end
   endfunction
-
+// converts tvip_axi_burst_length type to int
   function automatic int unpack_burst_length(tvip_axi_burst_length burst_length);
     return int'(burst_length) + 1;
   endfunction
 
   typedef bit [3:0] tvip_axi_qos;
-
+//just text explanation of the burst type
   typedef enum bit [2:0] {
     TVIP_AXI_BURST_SIZE_1_BYTE    = 'b000,
     TVIP_AXI_BURST_SIZE_2_BYTES   = 'b001,
@@ -48,7 +48,7 @@ package tvip_axi_types_pkg;
       default:  ; //  TBD
     endcase
   endfunction
-
+// converts tvip_axi_burst_size to int
   function automatic int unpack_burst_size(tvip_axi_burst_size burst_size);
     case (burst_size)
       TVIP_AXI_BURST_SIZE_1_BYTE:     return  1;
@@ -67,9 +67,9 @@ package tvip_axi_types_pkg;
     TVIP_AXI_INCREMENTING_BURST = 'b01,
     TVIP_AXI_WRAPPING_BURST     = 'b10
   } tvip_axi_burst_type;
-
+// all AXI widths are this type e.g. wdata,rdata
   typedef bit [`TVIP_AXI_MAX_DATA_WIDTH-1:0]  tvip_axi_data;
-
+//strobe 1 bit signal for 1 byte of data
   typedef bit [`TVIP_AXI_MAX_DATA_WIDTH/8-1:0]  tvip_axi_strobe;
 
   typedef enum bit [1:0] {
