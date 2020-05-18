@@ -87,8 +87,16 @@ virtual class tvip_axi_master_driver extends tvip_axi_component_base #(
       reset_if();
     end
   endtask
+  
+  task do_nothing();
+    $display ("Questa workaround for pure virtual tasks");
+  endtask
 
-  protected pure virtual task reset_if();
+  protected virtual task reset_if();
+    do_nothing();
+  endtask
+  
+//   protected virtual task reset_if();
 
   protected task get_request_from_port();
     uvm_wait_for_nba_region();
@@ -189,14 +197,37 @@ virtual class tvip_axi_master_driver extends tvip_axi_component_base #(
     end
   endfunction
 
-  protected pure virtual task drive_address_valid(bit valid);
-  protected pure virtual task drive_id(tvip_axi_id id);
-  protected pure virtual task drive_address(tvip_axi_address address);
-  protected pure virtual task drive_burst_length(tvip_axi_burst_length burst_length);
-  protected pure virtual task drive_burst_size(tvip_axi_burst_size burst_size);
-  protected pure virtual task drive_burst_type(tvip_axi_burst_type burst_type);
-  protected pure virtual task drive_qos(tvip_axi_qos qos);
+  //protected pure virtual task drive_address_valid(bit valid);
+  //protected pure virtual task drive_id(tvip_axi_id id);
+  //protected pure virtual task drive_address(tvip_axi_address address);
+  //protected pure virtual task drive_burst_length(tvip_axi_burst_length burst_length);
+  //protected pure virtual task drive_burst_size(tvip_axi_burst_size burst_size);
+  //protected pure virtual task drive_burst_type(tvip_axi_burst_type burst_type);
+  //protected pure virtual task drive_qos(tvip_axi_qos qos);
 
+
+  protected virtual task drive_address_valid(bit valid);
+     do_nothing();
+  endtask
+  protected virtual task drive_id(tvip_axi_id id);
+     do_nothing();
+  endtask
+  protected virtual task drive_address(tvip_axi_address address);
+     do_nothing();
+  endtask
+  protected virtual task drive_burst_length(tvip_axi_burst_length burst_length);  
+	do_nothing();
+  endtask
+  protected virtual task drive_burst_size(tvip_axi_burst_size burst_size);
+     do_nothing();
+  endtask
+  protected virtual task drive_burst_type(tvip_axi_burst_type burst_type);
+     do_nothing();
+  endtask
+  protected virtual task drive_qos(tvip_axi_qos qos);
+     do_nothing();
+  endtask
+  
   protected virtual task finish_address();
     end_address(current_address);
     current_address = null;
@@ -260,11 +291,25 @@ virtual class tvip_axi_master_driver extends tvip_axi_component_base #(
     end
   endfunction
 
-  protected pure virtual task drive_write_data_valid(bit valid);
-  protected pure virtual task drive_write_data(tvip_axi_data data);
-  protected pure virtual task drive_strobe(tvip_axi_strobe strobe);
-  protected pure virtual task drive_write_data_last(bit last);
-
+ // protected pure virtual task drive_write_data_valid(bit valid);
+ // protected pure virtual task drive_write_data(tvip_axi_data data);
+ // protected pure virtual task drive_strobe(tvip_axi_strobe strobe);
+ // protected pure virtual task drive_write_data_last(bit last);
+  
+  protected  virtual task drive_write_data_valid(bit valid);
+      do_nothing();
+  endtask
+  protected  virtual task drive_write_data(tvip_axi_data data);
+      do_nothing();
+  endtask
+  protected  virtual task drive_strobe(tvip_axi_strobe strobe);
+      do_nothing();
+  endtask
+  protected  virtual task drive_write_data_last(bit last);
+      do_nothing();
+  endtask
+   
+   
   protected virtual task finish_write_data();
     if (write_data_index == (current_write_data.get_burst_length() - 1)) begin
       end_write_data(current_write_data);
@@ -307,7 +352,9 @@ virtual class tvip_axi_master_driver extends tvip_axi_component_base #(
     end
   endtask
 
-  protected pure virtual task drive_response_ready(bit ready);
+  protected virtual task drive_response_ready(bit ready);
+  do_nothing();
+  endtask
 
   protected task sample_response();
     tvip_axi_id id;

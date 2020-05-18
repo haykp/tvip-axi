@@ -35,6 +35,11 @@ virtual class tvip_axi_slave_driver extends tvip_axi_component_base #(
   protected int                         response_size;
   protected int                         response_delay;
 
+
+  task do_nothing();
+    $display ("Questa workaround for pure virtual tasks");
+  endtask
+
   task run_phase(uvm_phase phase);
     forever @(vif.slave_cb, negedge vif.areset_n) begin
       if (!vif.areset_n) begin
@@ -111,7 +116,10 @@ virtual class tvip_axi_slave_driver extends tvip_axi_component_base #(
     end
   endtask
 
-  protected pure virtual task reset_if();
+//  protected pure virtual task reset_if();
+  protected  virtual task reset_if();
+  do_nothing();
+endtask
 
   protected task update_item_buffer();
     while (seq_item_port.has_do_available()) begin
@@ -171,7 +179,10 @@ virtual class tvip_axi_slave_driver extends tvip_axi_component_base #(
     end
   endtask
 
-  protected pure virtual task drive_address_ready(bit address_ready);
+//  protected pure virtual task drive_address_ready(bit address_ready);
+ protected virtual task drive_address_ready(bit address_ready);
+ do_nothing();
+ endtask
 
   protected task drive_write_data_channel();
     bit write_data_ready;
@@ -196,7 +207,9 @@ virtual class tvip_axi_slave_driver extends tvip_axi_component_base #(
     end
   endtask
 
-  protected pure virtual task drive_write_data_ready(bit write_data_ready);
+  protected  virtual task drive_write_data_ready(bit write_data_ready);
+  do_nothing();
+endtask
 
   protected task manage_response_buffer();
     if (item_buffer.size() == 0) begin
@@ -334,7 +347,10 @@ virtual class tvip_axi_slave_driver extends tvip_axi_component_base #(
     end
   endfunction
 
-  protected pure virtual function tvip_axi_data get_read_data_value(bit valid, int index);
+  //protected pure virtual function tvip_axi_data get_read_data_value(bit valid, int index);
+  protected virtual function tvip_axi_data get_read_data_value(bit valid, int index);
+    do_nothing();
+  endfunction
 
   protected virtual function tvip_axi_response get_response_value(bit valid, int index);
     if (valid) begin
@@ -345,13 +361,32 @@ virtual class tvip_axi_slave_driver extends tvip_axi_component_base #(
     end
   endfunction
 
-  protected pure virtual function bit get_response_last_value(bit valid, int index);
-
-  protected pure virtual task drive_response_valid(bit valid);
-  protected pure virtual task drive_response_id(tvip_axi_id id);
-  protected pure virtual task drive_read_data(tvip_axi_data data);
-  protected pure virtual task drive_response(tvip_axi_response response);
-  protected pure virtual task drive_response_last(bit response_last);
+  //protected pure virtual function bit get_response_last_value(bit valid, int index);
+  //protected pure virtual task drive_response_valid(bit valid);
+  //protected pure virtual task drive_response_id(tvip_axi_id id);
+  //protected pure virtual task drive_read_data(tvip_axi_data data);
+  //protected pure virtual task drive_response(tvip_axi_response response);
+  //protected pure virtual task drive_response_last(bit response_last);
+  
+  protected virtual function bit get_response_last_value(bit valid, int index);
+  do_nothing();
+  endfunction
+  protected virtual task drive_response_valid(bit valid);
+    do_nothing();
+  endtask
+  protected virtual task drive_response_id(tvip_axi_id id);
+    do_nothing();
+  endtask
+  protected virtual task drive_read_data(tvip_axi_data data);
+    do_nothing();
+  endtask
+  protected virtual task drive_response(tvip_axi_response response);
+    do_nothing();
+  endtask
+  protected virtual task drive_response_last(bit response_last);
+    do_nothing();
+  endtask
+  
 
   protected task finish_response();
     int index;
