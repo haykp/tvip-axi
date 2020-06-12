@@ -8,7 +8,7 @@ class tvip_axi_sample_configuration extends tue_configuration;
         bit                     enable_ready_delay;
         bit                     enable_out_of_order_response;
         bit                     enable_read_interleave;
-  rand  tvip_axi_configuration  axi_cfg;
+		rand  tvip_axi_configuration  axi_cfg;
 
   constraint c_axi_basic {
     axi_cfg.id_width         == 8;

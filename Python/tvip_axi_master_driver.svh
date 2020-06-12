@@ -352,7 +352,7 @@ virtual class tvip_axi_master_driver extends tvip_axi_component_base #(
     end
   endtask
 
-  protected pure virtual task drive_response_ready(bit ready);
+  protected virtual task drive_response_ready(bit ready);
   do_nothing();
   endtask
 

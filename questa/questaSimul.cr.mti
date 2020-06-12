@@ -6,19 +6,6 @@ QuestaSim-64 vlog 10.2c Compiler 2013.07 Jul 19 2013
 Top level modules:
 	--none--
 
-} {} {}} D:/Documents/AXI_VIP/dev/tvip-axi/sample/env/tvip_axi_sample_pkg.sv {1 {vlog -work work -vopt -sv +incdir+D:/Documents/AXI_VIP/dev/tvip-axi/sample/env +incdir+D:/Documents/AXI_VIP/dev/tue-master/src D:/Documents/AXI_VIP/dev/tvip-axi/sample/env/tvip_axi_sample_pkg.sv
-QuestaSim-64 vlog 10.2c Compiler 2013.07 Jul 19 2013
--- Compiling package tvip_axi_sample_pkg
--- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
--- Importing package tue_pkg
--- Importing package tvip_axi_types_pkg
--- Importing package tvip_axi_pkg
-** Note: (vlog-2286) Using implicit +incdir+C:/questasim64_10.2c/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
-
-
-Top level modules:
-	--none--
-
 } {} {}} D:/Documents/AXI_VIP/dev/tue-master/src/tue_pkg.sv {2 {vlog -work work -vopt -sv +incdir+D:/Documents/AXI_VIP/dev/tue-master/src D:/Documents/AXI_VIP/dev/tue-master/src/tue_pkg.sv
 QuestaSim-64 vlog 10.2c Compiler 2013.07 Jul 19 2013
 ** Note: (vlog-2286) Using implicit +incdir+C:/questasim64_10.2c/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
@@ -35,21 +22,15 @@ QuestaSim-64 vlog 10.2c Compiler 2013.07 Jul 19 2013
 Top level modules:
 	--none--
 
-} {} {}} D:/Documents/AXI_VIP/dev/tvip-axi/sample/env/top.sv {1 {vlog -work work -vopt -sv D:/Documents/AXI_VIP/dev/tvip-axi/sample/env/top.sv
+} {} {}} D:/Documents/AXI_VIP/dev/tvip-axi/sample/env/tvip_axi_sample_pkg.sv {1 {vlog -work work -vopt -sv +incdir+D:/Documents/AXI_VIP/dev/tvip-axi/sample/env +incdir+D:/Documents/AXI_VIP/dev/tue-master/src D:/Documents/AXI_VIP/dev/tvip-axi/sample/env/tvip_axi_sample_pkg.sv
 QuestaSim-64 vlog 10.2c Compiler 2013.07 Jul 19 2013
--- Compiling module top
+-- Compiling package tvip_axi_sample_pkg
 -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
 -- Importing package tue_pkg
 -- Importing package tvip_axi_types_pkg
 -- Importing package tvip_axi_pkg
--- Importing package tvip_axi_sample_pkg
+** Note: (vlog-2286) Using implicit +incdir+C:/questasim64_10.2c/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
 
-Top level modules:
-	top
-
-} {} {}} D:/Documents/AXI_VIP/dev/tvip-axi/src/tvip_axi_types_pkg.sv {1 {vlog -work work -vopt -sv +incdir+D:/Documents/AXI_VIP/dev/tvip-axi/src D:/Documents/AXI_VIP/dev/tvip-axi/src/tvip_axi_types_pkg.sv
-QuestaSim-64 vlog 10.2c Compiler 2013.07 Jul 19 2013
--- Compiling package tvip_axi_types_pkg
 
 Top level modules:
 	--none--
@@ -86,6 +67,13 @@ QuestaSim-64 vlog 10.2c Compiler 2013.07 Jul 19 2013
 
 ** Warning: D:/Documents/AXI_VIP/dev/tvip-axi/src/tvip_axi_slave_driver.svh(372): (vlog-LRM-2875) Task "do_nothing" is being called in function "get_response_last_value".
 
+
+Top level modules:
+	--none--
+
+} {} {}} D:/Documents/AXI_VIP/dev/tvip-axi/src/tvip_axi_types_pkg.sv {1 {vlog -work work -vopt -sv +incdir+D:/Documents/AXI_VIP/dev/tvip-axi/src D:/Documents/AXI_VIP/dev/tvip-axi/src/tvip_axi_types_pkg.sv
+QuestaSim-64 vlog 10.2c Compiler 2013.07 Jul 19 2013
+-- Compiling package tvip_axi_types_pkg
 
 Top level modules:
 	--none--
