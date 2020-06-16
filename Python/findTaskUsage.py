@@ -1,8 +1,9 @@
 
 ## Execute Anadonda powershell Promt
 ## cd D:\Documents\AXI_VIP\dev\tvip-axi\Python
-## cd D:\Documents\AXI_VIP\dev\Python
+##  python.exe .\findTaskUsage.py
 
+import re
 
 print ("Getting function or task usage in the file")
 
@@ -13,12 +14,20 @@ class ParseFunctionsTasks (object):
 		
 	def readNamesList (self):
 		with open(self.namesList) as f:
-			self.checkNames = f.read()	
-			print (self.checkNames)
+			self.func_taskNames = f.read().splitlines()	
+		#	print (self.func_taskNames)
 	
 	def getFunctions (self):
-		#for each in self.checkNames:
-		#	print (each)
+		#protected virtual function bit get_write_data_last_value(bit valid);
+		
+		for each in self.func_taskNames:
+			#print (each)
+			m=re.match(r".+\s+function\s+\w+\s+(\w+)\s*\(.+$", each)
+			if m:
+				print ((each), "==>", m.group(1) )
+
+			
+			
 		return
 	
 	
