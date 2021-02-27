@@ -1,6 +1,17 @@
 [![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/A0A231E3I)
 [![Gitter](https://badges.gitter.im/taichi-ishitani/tvip-axi.svg)](https://gitter.im/taichi-ishitani/tvip-axi?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
+
+
+## hayk
+Now creating my VIP based on taichi stuff
+Need to remove extra packages and make it more easy UVM style
+
+
+
+################################################################################################################
+################################################################################################################
+
 # TVIP-AXI
 
 TVIP-AXI is an UVM package of AMBA AXI4 VIP.
@@ -80,3 +91,4 @@ If you have any questions, problems, feedbacks, etc., you can post them on follo
 
 Copyright (C) 2018 Taichi Ishitani.
 TVIP-AXI is licensed under the Apache-2.0 license. See [LICENSE](LICENSE) for further details.
+
