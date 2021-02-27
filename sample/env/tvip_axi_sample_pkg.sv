@@ -12,5 +12,9 @@ package tvip_axi_sample_pkg;
   `include  "tvip_axi_sample_configuration.svh"
   `include  "tvip_axi_sample_write_read_sequence.svh"
   `include  "tvip_axi_sample_test.svh"
+ 
+// @@@ hayk added 
+  `include  "tvip_axi_sample_write_read_sequence_hayk.svh"
+  `include  "tvip_axi_sample_test_hayk.svh"
 endpackage
 `endif
